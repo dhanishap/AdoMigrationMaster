@@ -1,15 +1,13 @@
-name:  User Story
+name: User Story
 description: Create a User Story
 title: ""
 labels: ["type:user-story"]
-placeholder: "Enter Title"
 
 body:
   - type: textarea
     id: description
     attributes:
       label: Description
-      description: 
       placeholder: "Add description"
     validations:
       required: true
@@ -18,16 +16,13 @@ body:
     id: acceptance_criteria
     attributes:
       label: Acceptance Criteria
-      description: 
-      placeholder: "Add Acceptance Criteria "
+      placeholder: "Add Acceptance Criteria"
 
   - type: textarea
     id: discussion
     attributes:
       label: Discussion
-      placeholder: "Add a comment.Use # to link an issue, @ to mention a person,! to link a pull request "
-      description: 
-        
+      placeholder: "Add a comment. Use # to link an issue, @ to mention a person, ! to link a pull request"
 
   - type: dropdown
     id: priority
