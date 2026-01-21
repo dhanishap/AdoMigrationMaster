@@ -1,0 +1,148 @@
+name: 🔄 Change Request
+description: Create a Production Change Request
+title: "[CR] "
+labels: ["type:change-request"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔔 Change Request
+        Please complete all required sections before submitting.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Describe why this change is required
+      placeholder: "Provide background and purpose of the change"
+    validations:
+      required: true
+
+  - type: textarea
+    id: release_instructions
+    attributes:
+      label: Release Instructions
+      description: Step-by-step instructions to execute the change
+      placeholder: |
+        Option A:
+        1. Step one
+        2. Step two
+
+        Option B:
+        1. Step one
+        2. Step two
+    validations:
+      required: true
+
+  - type: textarea
+    id: customer_impact
+    attributes:
+      label: Customer Impact
+      description: Impact to customers during or after the change
+      placeholder: "Describe customer impact"
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation_plan
+    attributes:
+      label: Validation
+      description: How will the change be validated?
+      placeholder: "Describe validation steps"
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation_instructions
+    attributes:
+      label: Validation Instructions
+      description: Detailed post-deployment validation steps
+      placeholder: "How to confirm the change was successful"
+
+  - type: textarea
+    id: rollback_plan
+    attributes:
+      label: Rollback / Recovery Plan
+      description: Steps to rollback or recover if change fails
+      placeholder: "Describe rollback steps"
+    validations:
+      required: true
+
+  - type: textarea
+    id: change_impact
+    attributes:
+      label: Change Impact
+      description: Systems, services, or data impacted
+      placeholder: "List impacted components"
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P0 - Critical
+        - P1 - High
+        - P2 - Medium
+        - P3 - Low
+    validations:
+      required: true
+
+  - type: dropdown
+    id: risk_factor
+    attributes:
+      label: Risk Factor
+      options:
+        - Low
+        - Medium
+        - High
+    validations:
+      required: true
+
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: Change Type
+      options:
+        - Normal
+        - Emergency
+        - Standard
+    validations:
+      required: true
+
+  - type: dropdown
+    id: downtime_required
+    attributes:
+      label: Downtime Required
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true
+
+  - type: input
+    id: deployment_duration
+    attributes:
+      label: Deployment Duration (hours)
+      placeholder: "e.g., 1"
+
+  - type: textarea
+    id: monitoring_required
+    attributes:
+      label: Monitoring Required
+      description: Post-deployment monitoring details
+      placeholder: "Describe monitoring steps"
+
+  - type: textarea
+    id: approvals
+    attributes:
+      label: Approvals
+      description: Required approvers or approval links
+      placeholder: "List approvers / CAB references"
+
+  - type: textarea
+    id: point_of_contact
+    attributes:
+      label: Point of Contact
+      description: Primary and secondary contacts
+      placeholder: "Name, alias, on-call details"
