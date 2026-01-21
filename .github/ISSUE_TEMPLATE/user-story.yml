@@ -1,14 +1,16 @@
 name:  User Story
 description: Create a User Story
-title: "Enter Title "
+title: ""
 labels: ["type:user-story"]
+placeholder: "Enter Title"
 
 body:
   - type: textarea
     id: description
     attributes:
       label: Description
-      description: Add description
+      description: 
+      placeholder: "Add description"
     validations:
       required: true
 
@@ -16,20 +18,16 @@ body:
     id: acceptance_criteria
     attributes:
       label: Acceptance Criteria
-      description: Add Acceptance Criteria
-      value: |
-        - [ ] Criteria 1
-        - [ ] Criteria 2
-        - [ ] Criteria 3
-    validations:
-      required: true
+      description: 
+      placeholder: "Add Acceptance Criteria "
 
   - type: textarea
     id: discussion
     attributes:
       label: Discussion
-      description: >
-        Add a comment.Use # to link an issue, @ to mention a person,! to link a pull request
+      placeholder: "Add a comment.Use # to link an issue, @ to mention a person,! to link a pull request "
+      description: 
+        
 
   - type: dropdown
     id: priority
@@ -54,6 +52,6 @@ body:
     attributes:
       label: Risk
       options:
-        - "Low"
-        - "Medium"
-        - "High"
+        - "3-Low"
+        - "2-Medium"
+        - "1-High"
