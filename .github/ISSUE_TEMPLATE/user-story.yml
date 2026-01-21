@@ -1,6 +1,6 @@
 name: User Story
 description: Create a User Story
-title: ""
+title: "[US] "
 labels: ["type:user-story"]
 
 body:
