@@ -1,0 +1,68 @@
+name: 🧩 User Story
+description: Create a User Story with structured fields
+title: "[US] "
+labels: ["type:user-story"]
+
+body:
+  - type: textarea
+    id: user_story
+    attributes:
+      label: User Story
+      description: As a <role>, I want <feature>, so that <benefit>
+      placeholder: |
+        As a user
+        I want to
+        So that
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Detailed explanation of the requirement
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Conditions to consider the story complete
+      value: |
+        - [ ] Criteria 1
+        - [ ] Criteria 2
+        - [ ] Criteria 3
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P0 (Critical)
+        - P1 (High)
+        - P2 (Medium)
+        - P3 (Low)
+    validations:
+      required: true
+
+  - type: input
+    id: story_points
+    attributes:
+      label: Story Points
+      placeholder: "1, 2, 3, 5, 8"
+
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk
+      options:
+        - Low
+        - Medium
+        - High
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / Related Work
+      placeholder: "Depends on #123"
