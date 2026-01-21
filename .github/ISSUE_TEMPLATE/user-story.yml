@@ -1,6 +1,6 @@
 name: 🧩 User Story
 description: Create a User Story with structured fields
-title: "[US] "
+title: "Enter Title "
 labels: ["type:user-story"]
 
 body:
