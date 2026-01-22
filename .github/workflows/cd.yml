@@ -2,7 +2,7 @@ name: CD (Release)
 
 on:
   workflow_run:
-    workflows: ["CI"]     # must match CI workflow name
+    workflows: ["CI"]
     types:
       - completed
 
@@ -17,6 +17,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: website-build
+          run-id: ${{ github.event.workflow_run.id }}
           path: build
 
       - name: Deploy to Azure Static Web Apps
