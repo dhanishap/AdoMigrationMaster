@@ -2,24 +2,29 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      artifact-name: website-build
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build static site
+      - name: Prepare site
         run: |
           mkdir build
           cp -r Website/* build/
 
-      - name: Publish build artifact
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: website-build
           path: build
+
+  release:
+    needs: build
+    uses: ./.github/workflows/cd.yml
+    secrets: inherit
