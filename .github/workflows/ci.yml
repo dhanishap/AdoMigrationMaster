@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build static site
+        run: |
+          mkdir build
+          cp -r Website/* build/
+
+      - name: Publish build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-build
+          path: build
